@@ -1,0 +1,4 @@
+# here is example: (please delete this line)
+# Path of the decoded point cloud, Path of the original point cloud
+/home/fxq/data/10bit_ply/lossy-geom-lossy-attrs_redandblack_vox10_1550_r01_enc.ply,/home/fxq/data/10bit_ply/redandblack_vox10_1550.ply
+/home/fxq/data/10bit_ply/lossy-geom-lossy-attrs_redandblack_vox10_1550_r02_enc.ply,/home/fxq/data/10bit_ply/redandblack_vox10_1550.ply

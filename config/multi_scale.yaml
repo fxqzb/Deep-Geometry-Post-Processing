@@ -1,0 +1,49 @@
+distributed: True
+image_to_tensorboard: True
+snapshot_save_iter: 50000
+snapshot_save_epoch: 20
+snapshot_save_start_iter: 20000
+snapshot_save_start_epoch: 20
+image_save_iter: 1000
+max_epoch: 200
+logging_iter: 100
+
+gen_optimizer:
+    type: adam
+    lr: 0.001
+    adam_beta1: 0.9
+    adam_beta2: 0.999
+    lr_policy:
+        iteration_mode: False
+        type: step
+        step_size: 1000000
+        gamma: 1
+
+
+trainer:
+    type: trainers.multi_scale_trainer::Trainer
+    loss_weight:
+      weight_bce: 1
+    init:
+      type: 'normal' 
+      gain: 0.02
+gen:
+    type: generators.multi_scale_model::Generator
+    param:
+      base_channel: 16
+      num_layers: 4
+
+
+data:
+    type: data.base_dataset::BaseDataset
+    path: ./traindata # your own data path here
+    cube_size: 64
+    num_workers: 8
+    train:
+      batch_size: 8          
+      distributed: True
+    val:
+      batch_size: 8
+      distributed: True
+
+

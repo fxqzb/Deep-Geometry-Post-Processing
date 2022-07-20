@@ -34,7 +34,6 @@ Experimental results show that the proposed method can significantly improve the
 * Python 3
 * pytorch (1.7.1)
 * CUDA
-* visdom
 
 **Conda installation**
 
